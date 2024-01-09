@@ -1,5 +1,3 @@
-
-import { NuxtImg } from '#build/components';
 <template>
     <div class="bg-promotion">      
         <NuxtImg
