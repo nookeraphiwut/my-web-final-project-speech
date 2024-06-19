@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/i18n',
     '@nuxt/devtools',
+    '@pinia/nuxt',
     '@nuxtjs/google-fonts',
     '@invictus.codes/nuxt-vuetify',
   ],
@@ -54,6 +55,10 @@ export default defineNuxtConfig({
     ],
     detectBrowserLanguage: false,
   },
+  
+  pinia: {
+    autoImports: ['defineStore', ['defineStore', 'definePiniaStore']],
+  },
   googleFonts: {
     download: true,
     families: {
@@ -61,4 +66,18 @@ export default defineNuxtConfig({
       Sriracha: true,
     },
   },
+  
+  runtimeConfig: {
+    // Private keys are only available on the server
+    private: {
+      cms: {
+        origin: process.env.CMS_URL,
+      },
+    },
+    public: {
+      cms: {
+        proxy: '/cms',
+      },
+    },
+  }
 })

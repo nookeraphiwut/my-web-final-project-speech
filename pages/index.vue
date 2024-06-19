@@ -1,14 +1,17 @@
 <template>
-    <category/>
-    <promotions/>
-    <categorytype/>
+    <v-container>
+      <promotions/>
     <productPages/>
+    </v-container>
 </template>
 <script setup lang="ts">
 import productPages from '~/components/pages/landing/productPages.vue'
 import promotions from '~/components/pages/landing/promotions.vue'
-import category from '~/components/pages/landing/category.vue'
-import categorytype from '~/components/pages/landing/categoryType.vue'
+
+
+useHead({
+  title: "SHEINN | Homepage",
+})
 </script>
 <style lang="scss" scoped>
 .box{
